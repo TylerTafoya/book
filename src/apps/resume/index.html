@@ -14,35 +14,61 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
       <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
-
-      <div class="container">
-
-        <h1>Zach Lamb</h1>
-
-        <h2>Favorite Programming Languages</h2>
-        <ul class="collection">
-          <li class="collection-item">Javascript</li>
-          <li class="collection-item">Elixir</li>
-        </ul>
-
-        <h2>Favorite Food</h2>
-        <ul class="collection" id="foods">
-        </ul>
-
-      </div>
-
-      <script>
-
+		
+		<nav>
+			<div class="nav-wrapper">
+				<a id="name" href="#" class="brand-logo center"></a>
+				<ul id="navbar" class="right hide-on-med-and-down">
+					<li><a href='pages/relevantcourses.html'>Relevant Courses</a></li>
+					<li><a href='pages/education.html'>Education</a></li>
+					<li><a href='pages/projects.html'>Projects</a></li>
+					<li><a href='pages/work.html'>Work Experience</a></li>
+				</ul>
+			</div>
+		</nav>
+		<h3>Tyler Tafoya - Resume</h3>
+		<div class="row">
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="images/bear.jpg">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">About Me!<i class="material-icons right">more_vert</i></span>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Me in a Nutshell<i class="material-icons right">close</i></span>
+						<ul class="collection" id="descriptions"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="images/Telephones.jpg">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">Contact Info<i class="material-icons right">more_vert</i></span>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Let's Talk!<i class="material-icons right">close</i></span>
+						<p>Connect with me on Facebook, Instagram, or send a carrier pigeon!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
         // create a firebase reference to the root
-        var ref = new Firebase('https://hello-ucdd2.firebaseio.com/')
+        var ref = new Firebase('https://resume-tafoya.firebaseio.com/')
 
-        // read data from the location bio/favorite_foods, only once
-        ref.child('bio/favorite_foods').once('value', function(snapshot){
-          var foods = snapshot.val()
-          foods.forEach(function(food){
-            $('#foods').append('<li class="collection-item">' + food + '</li>')
+        // read data from the location Relevant Courses, only once
+        ref.child('About Me').on('value', function(snapshot){
+          var descriptions = snapshot.val()
+          descriptions.forEach(function(description){
+            $('#descriptions').append('<li class="collection-item">' + description + '</li>')
           })
         })
-      </script>
+		</script>
     </body>
   </html>
