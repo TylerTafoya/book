@@ -2,7 +2,7 @@
 layout: layout.hbs
 ---
 
-# Book
+# Tyler Tafoya's Book
 
 Everything I've learned from UCDD 2 - Spring 2016.
 
