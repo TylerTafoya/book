@@ -11,22 +11,26 @@
     </head>
 
     <body>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-      <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 		
 		<nav>
 			<div class="nav-wrapper">
-				<a id="name" href="#" class="brand-logo center"></a>
+				<a id="name" href="#" class="brand-logo left">Tyler Tafoya</a>
+				
 				<ul id="navbar" class="right hide-on-med-and-down">
-					<li><a href='pages/relevantcourses.html'>Relevant Courses</a></li>
-					<li><a href='pages/education.html'>Education</a></li>
-					<li><a href='pages/projects.html'>Projects</a></li>
-					<li><a href='pages/work.html'>Work Experience</a></li>
+					<li><a>Home</a></li>
+					<li><a href="pages/relevantcourses.html">Relevant Courses</a></li>
+					<li><a href="pages/education.html">Education</a></li>
+					<li><a href="pages/projects.html">Projects</a></li>
+					<li><a href="pages/work.html">Work Experience</a></li>
+					<li><a href="pages/tasks.html">Tasks</a></li>
+					<li><a href="pages/subscribe.html">Subscribe</a></li>
 				</ul>
 			</div>
 		</nav>
-		<h3>Tyler Tafoya - Resume</h3>
+		
 		<div class="row">
 			<div class="col s12 m6">
 				<div class="card">
@@ -52,7 +56,7 @@
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Let's Talk!<i class="material-icons right">close</i></span>
-						<p>Connect with me on Facebook, Instagram, or send a carrier pigeon!</p>
+						<p>Feel free to send me an email: tyler.tafoya@colorado.edu</p> 
 					</div>
 				</div>
 			</div>
@@ -61,7 +65,6 @@
 		<script>
         // create a firebase reference to the root
         var ref = new Firebase('https://resume-tafoya.firebaseio.com/')
-
         // read data from the location Relevant Courses, only once
         ref.child('About Me').on('value', function(snapshot){
           var descriptions = snapshot.val()
