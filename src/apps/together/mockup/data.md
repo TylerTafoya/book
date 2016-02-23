@@ -71,7 +71,7 @@
   </li>
 </ul>
 <h1 id="revision">Revision</h1>
-<p>In order to accomplish this redesign, active users will appear within a side-nav. The song queue and current song playing will display on the main page, and the queue will be within a side tabbing div. </p>
+<p>In order to accomplish this redesign, active users will appear materialize card-reveal. The song queue and current song playing will display on the main page, and the queue will be within a similar div. </p>
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
