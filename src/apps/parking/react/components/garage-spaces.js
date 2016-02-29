@@ -1,10 +1,9 @@
 MyComponents.GarageSpaces = React.createClass({
   render: function() {
     return (
-      <div className="card">
-        <div className="card-content">
-          TODO: This is a component to display the number of total spaces
-          and open spaces. Raw data is {JSON.stringify(this.props)}
+      <div className="card grey darken-2">
+        <div className="card-content text-center white-text">
+          <h5><b>Open Spaces: </b>{this.props.open}/{this.props.total}</h5>
         </div>
       </div>
     );
