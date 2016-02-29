@@ -110,8 +110,9 @@ function showActiveUsers(currentUsers) {
         position: {'lat': user.pos[0], 'lng': user.pos[1]},
         icon: '../images/green-marker.png'
       });
+      var name = user.displayName === undefined ? user.username : user.displayName;
       var infowindow = new google.maps.InfoWindow({
-        content: '<p>' + user['displayName'] + '</p>'
+        content: '<p>' + name + '</p>'
       });
       marker.addListener('click', function() {
         infowindow.open(map, marker);
@@ -120,8 +121,8 @@ function showActiveUsers(currentUsers) {
     }
     else {
       var oldPos = users[key].getPosition();
-      if (oldPos.lat() !== user.lat || oldPos.lng !== user.lon) {
-        users[key].setPosition({lat: user.lat, lng: user.lon});
+      if (oldPos.lat() !== user.pos[0] || oldPos.lng !== user.pos[1]) {
+        users[key].setPosition({'lat': user.pos[0], 'lng': user.pos[1]});
       }
     }
   });

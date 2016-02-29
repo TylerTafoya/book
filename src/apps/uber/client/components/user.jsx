@@ -4,16 +4,17 @@ class User extends React.Component {
 
     if (this.props.user){
       // user is authenticated
+      var name = this.props.user.displayName === undefined ? this.props.user.username : this.props.user.displayName;
       return (
         <div className="center-align">
           <div className="row">
             <div className="col s2 left-align">
-              <a className="modal-trigger" id="modal-trigger" href="#modal1">Set location</a>
+              <a className="modal-trigger" id="modal-trigger" href="#" onClick={openModal}>Set location</a>
             </div>
             <div className="col s8">
               <div className="chip" style={{'height': '45px', 'fontSize': '275%'}}>
                 <img src={this.props.user.imgUrl} style={{'height': '45px', 'width': '45px'}}/>
-                Hello {this.props.user.displayName}!
+                Hello {name}!
               </div>
             </div>
             <div className="col s2 right-align">
@@ -29,7 +30,7 @@ class User extends React.Component {
               </div>
             </div>
             <div className="modal-footer">
-              <a href="#!" id="change-loc" className="modal-action waves-effect waves-blue btn-flat">Submit</a>
+              <a href="#!" id="change-loc" onClick={changeLocation} className="modal-action waves-effect waves-blue btn-flat">Submit</a>
             </div>
           </div>
         </div> )
@@ -44,10 +45,7 @@ class User extends React.Component {
   
   componentDidMount() {
     var thisNode = this;
-    $('#modal-trigger').click(function() {
-      $('#modal1').openModal();
-    });
-    $('#change-loc').click(function() {
+    changeLocation = function() {
       var address = $('#user-address').val();
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
@@ -61,8 +59,14 @@ class User extends React.Component {
           Materialize.toast('Please enter a valid address', 4000);
         }
       });
-    });
+    }
   }
 }
+
+var openModal = function() {
+  $('#modal1').openModal();
+}
+
+var changeLocation;
 
 MyComponents.User = User
