@@ -10,7 +10,7 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [ToDos](apps/todos/)
 * [Resume](apps/resume/)
   * [ReactJS](apps/resume/react)
-* [Parking](apps/parking/)
+* [Parking](apps/parking/index.html)
   * [ReactJS](apps/parking/react)
 * Uber
   * [Mockup](apps/uber/mockup)
