@@ -20,12 +20,12 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>JUKEBOX</title>
+    <title>JUKEBOX admin</title>
   </head>
 
   <style>
     html {
-      background: url(images/background.jpg) no-repeat center center fixed;
+      background: url(../images/background.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -36,30 +36,29 @@
     }
 
     #scrollable {
-      height: 450px;
-      overflow-y: scroll;
-      position: relative;
-      bottom: 0;
-    }
-    #songScrollable {
-      height: 345px;
-      overflow-y: scroll;
-      position: relative;
-      bottom: 0;
+      height: 500px;
+      overflow: scroll;
     }
   </style>
+
   <body>
+
     <div id="app-container"></div>
     <footer class="page-footer blue-grey darken-4">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h4 class="grey-text text-lighten-4">Rocknroll</h4>
+            <h5 class="white-text">    </h5>
+            <h2 class="grey-text text-lighten-4">Rocknroll</h2>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Developed By:</h5>
+            <h5 class="white-text">Team Members</h5>
             <ul>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Huriphoonado">Willie Payne</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/Paigej">Paige Johnson</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/aokeson">Alex Okeson</a></li>
               <li><a class="grey-text text-lighten-3" href="https://github.com/TylerTafoya">Tyler Tafoya</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/huiminlu814">Hui-Min Lu</a></li>
             </ul>
           </div>
         </div>
@@ -71,13 +70,6 @@
 
   <script>
     MyComponents = {} // Global object where each property is a reference to a component class
-  </script>
-
-  <script>
-    $("#scrollable").scrollTop($('#scrollable').height())
-  </script>
-  <script>
-    $("#songScrollable").scrollTop($('#songScrollable').height())
   </script>
     
   <script type="text/babel" src="components/navbar.jsx"></script>
