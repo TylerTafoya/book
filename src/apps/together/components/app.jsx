@@ -9,6 +9,11 @@ class App extends React.Component {
     return (
       <div>
         <MyComponents.NavBar actions={this.props.actions}/>
+        <MyComponents.LandingPage 
+          user={this.props.data.user}
+          actions={this.props.actions}
+          loginAction={log}
+          logoutAction={signout}/>
         <MyComponents.User
           user={this.props.data.user}
           actions={this.props.actions}

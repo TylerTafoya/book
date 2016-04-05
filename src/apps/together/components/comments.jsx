@@ -53,24 +53,7 @@ class Comments extends React.Component {
       )
     }
     else {
-      return (
-        <div>
-          <div className="card">
-            <div className="card-content">
-              <div className="row">
-                <div className="col s1"><i className="small material-icons">chat</i></div>
-                <div className="col s6"><h6>Chat Room</h6></div>
-                <div className="progress blue-grey darken-4">
-                  <div className="determinate"></div>
-                </div>
-              </div>
-              <div id="scrollable">
-                { comments }
-              </div>
-            </div>
-          </div>      
-        </div>
-      )
+      return(<div></div>)
     }
   }
   componentDidMount(){

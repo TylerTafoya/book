@@ -1,7 +1,7 @@
 
 class CurrentSong extends React.Component {
   render(){
-  	
+  	if (this.props.user) {
   	var currentSong = this.props.currentSong.map(function(s,i){
       return (
 		    <li key={i}>
@@ -18,6 +18,10 @@ class CurrentSong extends React.Component {
       </div>
     )
   }
+  else {
+      return(<div></div>)
+    }
+}
 
 }
 MyComponents.CurrentSong = CurrentSong
